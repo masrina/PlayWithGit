@@ -144,77 +144,77 @@
     [self.view addConstraints:constraintsToActivate];
 }
 #pragma mark - Getters
-- (NSArray *)horizontalOrientationConstraints{
-    if (!_horizontalOrientationConstraints) {
-        NSLayoutConstraint *equalWidthConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.bContainerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
-        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView][bContainerView]|" options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom metrics:nil views:@{@"aContainerView":self.aContainerView, @"bContainerView":self.bContainerView}];
-        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView]|" options:0 metrics:nil views:@{@"aContainerView":self.aContainerView}];
-        NSArray *constraints = [vConstraints arrayByAddingObjectsFromArray:hConstraints];
-        _horizontalOrientationConstraints = [constraints arrayByAddingObject:equalWidthConstraints];
-    }
-    return _horizontalOrientationConstraints;
-}
-
-- (NSArray *)verticalOrientationConstraints{
-    if (!_verticalOrientationConstraints) {
-        NSLayoutConstraint *equalHeightConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.bContainerView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView][bContainerView]|" options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight metrics:nil views:@{@"aContainerView": self.aContainerView, @"bContainerView":self.bContainerView}];
-        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView]|" options:0 metrics:nil views:@{@"aContainerView":self.aContainerView}];
-        NSArray *constraints = [vConstraints arrayByAddingObjectsFromArray:hConstraints];
-        _verticalOrientationConstraints = [constraints arrayByAddingObject:equalHeightConstraints];
-    }
-    return _verticalOrientationConstraints;
-}
-
-//- (NSArray *)horizontalOrientationConstraints
-//{
+//- (NSArray *)horizontalOrientationConstraints{
 //    if (!_horizontalOrientationConstraints) {
-//        NSLayoutConstraint *equalWidthConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView
-//                                                                                 attribute:NSLayoutAttributeWidth
-//                                                                                 relatedBy:NSLayoutRelationEqual
-//                                                                                    toItem:self.bContainerView
-//                                                                                 attribute:NSLayoutAttributeWidth
-//                                                                                multiplier:1.0
-//                                                                                  constant:0];
-//        
-//        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView][bContainerView]|"
-//                                                                        options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom
-//                                                                        metrics:nil views:@{@"aContainerView": self.aContainerView, @"bContainerView": self.bContainerView}];
-//        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView]|"
-//                                                                        options:0
-//                                                                        metrics:nil
-//                                                                          views:@{@"aContainerView": self.aContainerView}];
+//        NSLayoutConstraint *equalWidthConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.bContainerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+//        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView][bContainerView]|" options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom metrics:nil views:@{@"aContainerView":self.aContainerView, @"bContainerView":self.bContainerView}];
+//        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView]|" options:0 metrics:nil views:@{@"aContainerView":self.aContainerView}];
 //        NSArray *constraints = [vConstraints arrayByAddingObjectsFromArray:hConstraints];
 //        _horizontalOrientationConstraints = [constraints arrayByAddingObject:equalWidthConstraints];
-//        
 //    }
 //    return _horizontalOrientationConstraints;
 //}
 //
-//
-//- (NSArray *)verticalOrientationConstraints
-//{
+//- (NSArray *)verticalOrientationConstraints{
 //    if (!_verticalOrientationConstraints) {
-//        NSLayoutConstraint *equalHeightConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView
-//                                                                                  attribute:NSLayoutAttributeHeight
-//                                                                                  relatedBy:NSLayoutRelationEqual
-//                                                                                     toItem:self.bContainerView
-//                                                                                  attribute:NSLayoutAttributeHeight
-//                                                                                 multiplier:1.0
-//                                                                                   constant:0];
-//        
-//        
-//        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView][bContainerView]|"
-//                                                                        options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
-//                                                                        metrics:nil views:@{@"aContainerView": self.aContainerView, @"bContainerView": self.bContainerView}];
-//        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView]|"
-//                                                                        options:0
-//                                                                        metrics:nil
-//                                                                          views:@{@"aContainerView": self.aContainerView}];
+//        NSLayoutConstraint *equalHeightConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.bContainerView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+//        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView][bContainerView]|" options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight metrics:nil views:@{@"aContainerView": self.aContainerView, @"bContainerView":self.bContainerView}];
+//        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView]|" options:0 metrics:nil views:@{@"aContainerView":self.aContainerView}];
 //        NSArray *constraints = [vConstraints arrayByAddingObjectsFromArray:hConstraints];
 //        _verticalOrientationConstraints = [constraints arrayByAddingObject:equalHeightConstraints];
-//        
 //    }
 //    return _verticalOrientationConstraints;
 //}
+
+- (NSArray *)horizontalOrientationConstraints
+{
+    if (!_horizontalOrientationConstraints) {
+        NSLayoutConstraint *equalWidthConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView
+                                                                                 attribute:NSLayoutAttributeWidth
+                                                                                 relatedBy:NSLayoutRelationEqual
+                                                                                    toItem:self.bContainerView
+                                                                                 attribute:NSLayoutAttributeWidth
+                                                                                multiplier:1.0
+                                                                                  constant:0];
+        
+        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView][bContainerView]|"
+                                                                        options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom
+                                                                        metrics:nil views:@{@"aContainerView": self.aContainerView, @"bContainerView": self.bContainerView}];
+        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView]|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:@{@"aContainerView": self.aContainerView}];
+        NSArray *constraints = [vConstraints arrayByAddingObjectsFromArray:hConstraints];
+        _horizontalOrientationConstraints = [constraints arrayByAddingObject:equalWidthConstraints];
+        
+    }
+    return _horizontalOrientationConstraints;
+}
+
+
+- (NSArray *)verticalOrientationConstraints
+{
+    if (!_verticalOrientationConstraints) {
+        NSLayoutConstraint *equalHeightConstraints = [NSLayoutConstraint constraintWithItem:self.aContainerView
+                                                                                  attribute:NSLayoutAttributeHeight
+                                                                                  relatedBy:NSLayoutRelationEqual
+                                                                                     toItem:self.bContainerView
+                                                                                  attribute:NSLayoutAttributeHeight
+                                                                                 multiplier:1.0
+                                                                                   constant:0];
+        
+        
+        NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aContainerView][bContainerView]|"
+                                                                        options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
+                                                                        metrics:nil views:@{@"aContainerView": self.aContainerView, @"bContainerView": self.bContainerView}];
+        NSArray *hConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aContainerView]|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:@{@"aContainerView": self.aContainerView}];
+        NSArray *constraints = [vConstraints arrayByAddingObjectsFromArray:hConstraints];
+        _verticalOrientationConstraints = [constraints arrayByAddingObject:equalHeightConstraints];
+        
+    }
+    return _verticalOrientationConstraints;
+}
 @end
