@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Develop Branch 7th build");
+
     UIView *aContainerView = [self viewWithLabelText:@"A" andBackgroundColor:[UIColor yellowColor]];
     UIView *bContainerView = [self viewWithLabelText:@"B" andBackgroundColor:[UIColor greenColor]];
     
