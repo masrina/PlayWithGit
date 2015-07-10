@@ -166,7 +166,7 @@
 //    return _verticalOrientationConstraints;
 //}
 
-// seventh changes will trigger build to automation_test branch
+// eight changes will trigger build to automation_test branch
 
 - (NSArray *)horizontalOrientationConstraints
 {
